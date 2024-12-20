@@ -1,0 +1,47 @@
+//@import "@/assets/scss/variables";
+//
+//@mixin scrollbars($size,
+//  $foreground-color,
+//  $background-color: mix($foreground-color, white, 50%)) {
+//  &::-webkit-scrollbar {
+//    width: $size;
+//    height: $size;
+//  }
+//
+//  &::-webkit-scrollbar-thumb {
+//    background: $foreground-color;
+//    border-radius: $size;
+//  }
+//
+//  &::-webkit-scrollbar-track {
+//    background: $background-color;
+//    margin-top: 10px;
+//    margin-bottom: 10px;
+//  }
+//
+//  & {
+//    scrollbar-face-color: $foreground-color;
+//    scrollbar-track-color: $background-color;
+//  }
+//}
+//
+//
+//.basic-scrollbar {
+//  @media (min-width: $breakpoint-base) {
+//    @include scrollbars(5px,
+//      var(--chakra-colors-c-indigo-900),
+//      var(--chakra-colors-c-gray-300));
+//  }
+//
+//  @media (min-width: $breakpoint-md) {
+//    @include scrollbars(7px,
+//      var(--chakra-colors-c-indigo-900),
+//      var(--chakra-colors-c-gray-300));
+//  }
+//
+//  @media (min-width: $breakpoint-lg) {
+//    @include scrollbars(12px,
+//      var(--chakra-colors-c-indigo-900),
+//      var(--chakra-colors-c-gray-300));
+//  }
+//}

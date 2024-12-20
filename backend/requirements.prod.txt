@@ -1,0 +1,38 @@
+﻿anyio
+Django~=4.2.13
+psycopg
+psycopg2-binary
+# celery~=5.4.0
+# django-celery-beat
+# django-celery-results
+django-cors-headers
+django-filter
+django-rest-passwordreset
+django-polymorphic
+redis
+django-redis
+djangorestframework
+djangorestframework-simplejwt
+django-allauth
+dj-rest-auth 
+drf-nested-routers
+drf-standardized-errors
+numpy
+Pillow
+PyJWT
+django-notifications-hq
+django-rest-polymorphic
+python-dotenv
+django-debug-toolbar
+django-jazzmin
+django-environ
+django-log-viewer
+django-soft-delete
+django-restful-admin
+requests
+django-parler
+django-parler-rest
+django-debug-toolbar
+django-gmailapi-backend
+
+stripe==2.55.0

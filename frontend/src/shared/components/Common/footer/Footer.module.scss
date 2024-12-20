@@ -1,0 +1,20 @@
+@use "@/assets/scss/fonts" as *;
+@use "@/assets/scss/variables" as *;
+
+.text {
+    color: var(--chakra-colors-c-white-A700);
+    @media (min-width: $breakpoint-base) {
+        @include body1;
+    }
+
+    @media (min-width: $breakpoint-md) {
+        @include body2;
+        font-size: 13.28px;
+        line-height: 17.4px;
+        font-weight: 500;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+        @include heading4;
+    }
+}
