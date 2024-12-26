@@ -2,7 +2,7 @@ from dj_rest_auth.serializers import JWTSerializerWithExpiration as _BaseJWTSeri
 from dj_rest_auth.serializers import PasswordResetSerializer as _BasePasswordResetSerializer
 
 from utils.serializers import get_datetime_formatted, serializers, TimestampedSerializer
-from .models import UserProfile
+# from .models import UserProfile
 
 
 class JWTSerializerWithExpiration(_BaseJWTSerializerWithExpiration):
@@ -45,9 +45,9 @@ class PasswordResetSerializer(_BasePasswordResetSerializer):
     #     self.reset_form.save(**opts)
 
 
-class UserProfileSerializer(TimestampedSerializer):
-    class Meta:
-        model = UserProfile
-        fields = ['default_email', 'default_address_line_1', 'default_address_line_2',
-                  'default_town_or_city', 'default_county', 'default_postcode', 'default_is_gift_wrapping',
-                  'created_at', 'updated_at', ]
+# class UserProfileSerializer(TimestampedSerializer):
+#     class Meta:
+#         model = UserProfile
+#         fields = ['default_email', 'default_address_line_1', 'default_address_line_2',
+#                   'default_town_or_city', 'default_county', 'default_postcode', 'default_is_gift_wrapping',
+#                   'created_at', 'updated_at', ]

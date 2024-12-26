@@ -1,0 +1,25 @@
+#home {
+  .banner-text {
+    position: relative;
+    z-index: 21;
+    margin-top: 96px;
+    padding: 48px 0 48px 0;
+
+    .title {
+      margin-top: 96px;
+      margin-bottom: 24px;
+      position: relative;
+      display: inline-block;
+      font-size: 1.25rem !important;
+      @apply
+      line-height: 2rem;
+      letter-spacing: .0125em !important;
+    }
+
+    .subtitle {
+      padding-right: 64px;
+      margin-bottom: 40px;
+      font-size: 24px;
+    }
+  }
+}

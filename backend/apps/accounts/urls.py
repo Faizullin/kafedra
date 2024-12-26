@@ -20,5 +20,5 @@ urlpatterns = [
     path('api/v1/auth/password/reset/', PasswordResetView.as_view(), name='rest_password_reset'),
     path('api/v1/auth/password/reset/confirm/',
          PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
-    path('api/v1/auth/me/', UserDetailsView.as_view(), name='rest_user_details'),
+#     path('api/v1/auth/me/', UserDetailsView.as_view(), name='rest_user_details'),
 ]

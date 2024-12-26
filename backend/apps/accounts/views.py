@@ -4,8 +4,8 @@ from dj_rest_auth.views import LoginView as _BaseLoginView, PasswordResetView as
 from rest_framework.generics import RetrieveUpdateAPIView
 from rest_framework.permissions import IsAuthenticated
 
-from .models import UserProfile
-from .serializers import UserProfileSerializer
+# from .models import UserProfile
+# from .serializers import UserProfileSerializer
 
 
 class LoginView(_BaseLoginView):
@@ -28,10 +28,10 @@ class PasswordResetView(_BasePasswordResetView):
     pass
 
 
-class UserProfileView(RetrieveUpdateAPIView):
-    queryset = UserProfile.objects.all()
-    serializer_class = UserProfileSerializer
-    permission_classes = [IsAuthenticated]
+# class UserProfileView(RetrieveUpdateAPIView):
+#     queryset = UserProfile.objects.all()
+#     serializer_class = UserProfileSerializer
+#     permission_classes = [IsAuthenticated]
 
-    def get_object(self):
-        return self.request.user.profile
+#     def get_object(self):
+#         return self.request.user.profile

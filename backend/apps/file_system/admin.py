@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import File
+from utils.admin import BaseAdmin
 
-# Register your models here.
+
+@admin.register(File)
+class FileAdmin(BaseAdmin):
+    pass

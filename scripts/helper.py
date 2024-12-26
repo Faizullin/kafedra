@@ -59,12 +59,12 @@ def main():
     elif action == "seed":
         print(f"Seeding database for {env} environment...")
         run_command(
-            f"docker exec -it {container_name} python3 manage.py shell -c \"from seeding.seed import *;seed(False)\" --settings=backend.settings.{settings_extension}")
+            f"docker exec -it {container_name} python3 manage.py shell -c \"from seeding.seed import *;seed(True)\" --settings=backend.settings.{settings_extension}")
 
     elif action == "remove_migrations_and_db":
         print(f"Seeding database for {env} environment...")
         run_command(
-            f"docker exec -it {container_name} python3 manage.py shell -c \"from seeding.remove_migrations_and_db import *;from seeding.seed import *;remove_migrations_and_db();seed(False)\" --settings=backend.settings.{settings_extension}")
+            f"docker exec -it {container_name} python3 manage.py shell -c \"from seeding.remove_migrations_and_db import *;from seeding.seed import *;remove_migrations_and_db();seed(True)\" --settings=backend.settings.{settings_extension}")
 
     elif action == "shell":
         print(f"Opening shell for {env} environment...")

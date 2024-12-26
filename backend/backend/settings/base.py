@@ -44,14 +44,14 @@ INSTALLED_APPS = [
     'gmailapi_backend',
     # 'django_grapesjs',
     'apps.accounts',
-    'apps.blogs',
-    'apps.products',
+    'apps.posts',
+    # 'apps.products',
     'apps.notification_system',
     'apps.file_system',
-    'apps.checkout',
-    'apps.carts',
-    'apps.contact_us',
-    'apps.chats',
+    # 'apps.checkout',
+    # 'apps.carts',
+    # 'apps.contact_us',
+    # 'apps.chats',
 ]
 
 MIDDLEWARE = [
