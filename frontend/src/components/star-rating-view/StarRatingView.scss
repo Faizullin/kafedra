@@ -1,0 +1,18 @@
+.star-rating-view {
+  $rating-select-color: yellow;
+
+  .star-icon {
+    margin-right: 10px;
+    @apply w-6 h-6;
+
+    &.selected svg {
+      fill: $rating-select-color;
+    }
+    &.editable {
+      cursor: pointer;
+    }
+    &.editable-highlighted {
+      fill: $rating-select-color;
+    }
+  }
+}

@@ -1,26 +1,24 @@
 from django.contrib import admin
-from django.urls import reverse_lazy
-from django.utils.html import format_html
 
 from utils.admin import BaseAdmin
-from .models import (PostComment, Post, PostCategory,)
+from .models import (Post, Category)
 
 
 @admin.register(Post)
 class PostAdmin(BaseAdmin):
-    list_display = ('title', 'slug', 'status',)
-    list_filter = ("status", 'category')
+    list_display = ('title', 'slug', 'publication_status',)
+    list_filter = ("publication_status", 'category')
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
 
 
-@admin.register(PostComment)
-class PostCommentAdmin(BaseAdmin):
-    list_display = ('title', 'message',)
-    search_fields = ['message']
+# @admin.register(PostComment)
+# class PostCommentAdmin(BaseAdmin):
+#     list_display = ('title', 'message',)
+#     search_fields = ['message']
 
 
-@admin.register(PostCategory)
-class PostCategoryAdmin(BaseAdmin):
+@admin.register(Category)
+class CategoryAdmin(BaseAdmin):
     list_display = ('title', 'slug',)
     search_fields = ['title', ]

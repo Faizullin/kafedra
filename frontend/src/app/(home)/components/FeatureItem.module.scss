@@ -1,0 +1,16 @@
+.feature-item {
+    position: relative;
+    width: 100%;
+    padding: 16px;
+
+
+}
+.feature-item-icon    {
+ position: absolute;
+ z-index: 1;
+ left: 50%;
+ transform: translate(-50%, -50%, 0);
+ aspect-ratio: 1/1;
+ border-radius: 50%;
+ background: var(--primary-dark-color);
+}

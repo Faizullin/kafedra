@@ -1,0 +1,95 @@
+.navbar {
+    overflow-x: clip;
+    transition: all .3s ease;
+    position: fixed;
+    border: none;
+
+    nav {
+        //@apply  z-50 relative border-0 pr-3 py-3 pl-6;
+        @apply bg-transparent shadow-none backdrop-blur-none backdrop-filter-none border-none;
+        @apply py-4;
+        transition: all .3s ease;
+
+        .nav-item  {
+            a {
+                font-size: 18px;
+                @apply no-underline font-semibold;
+            }
+
+            &.current a {
+                color: var(--primary-dark-color);
+            }
+        }
+    }
+
+    .navbar-brand {
+        img {
+            transition: all 0.3s ease-in-out;
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    &.fixed .navbar-brand img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .nav-auth {
+        @apply flex-1 hidden lg:flex justify-end items-center gap-4;
+        position: relative;
+
+        button, a {
+            z-index: 1;
+            font-size: 16px;
+            @apply no-underline font-semibold;
+        }
+
+        .login-btn{
+            color: #ffffff;
+        }
+
+        .register-btn {
+            border: 1px solid var(--primary-main-color);
+            -webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, .16);
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, .16);
+        }
+
+        .deco-bg {
+            background-color: var(--primary-main-color);
+            width: 500px;
+            height: 300px;
+            border-radius: 40px;
+            -webkit-transform: rotate(-10deg);
+            -ms-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+            position: absolute;
+            top: -190px;
+            right: -140px;
+        }
+    }
+
+
+
+
+    &.is-sticky  {
+        position: fixed;
+        z-index: 51;
+        background: white;
+        @apply shadow-md;
+
+        nav {
+            @apply py-2;
+        }
+
+        .deco-bg {
+            display: none;
+        }
+
+        .nav-auth {
+            .login-btn {
+                color: var(--primary-dark-color);
+            }
+        }
+    }
+}

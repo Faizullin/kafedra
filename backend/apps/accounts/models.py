@@ -1,6 +1,8 @@
 from django.contrib.auth.models import AbstractUser
 from django_softdelete.models import SoftDeleteModel
+
 from utils.models import AbstractTimestampedModel, models
+from .fields import AvatarField
 
 
 class UserApprovalStatus(models.TextChoices):
@@ -15,22 +17,16 @@ class CustomUser(AbstractUser, SoftDeleteModel):
         choices=UserApprovalStatus.choices,
         default=UserApprovalStatus.PENDING,
     )
+    avatar = AvatarField(null=True, blank=True,)
+    is_student = models.BooleanField(default=False)
 
 
-# class UserProfile(AbstractTimestampedModel, SoftDeleteModel):
-#     user = models.OneToOneField(
-#         CustomUser, null=True, blank=True, on_delete=models.SET_NULL, related_name="profile")
-#     default_email = models.EmailField(max_length=254, null=False, blank=False)
-#     # default_postcode = models.CharField(max_length=20, null=False, blank=True)
-#     # default_town_or_city = models.CharField(max_length=40, null=False,
-#     #                                         blank=True)
-#     # default_address_line_1 = models.CharField(max_length=80, null=False,
-#     #                                           blank=True)
-#     # default_address_line_2 = models.CharField(max_length=80, null=False,
-#     #                                           blank=True)
-#     default_county = models.CharField(max_length=80, null=False, blank=True)
-#     # image = FilerImageField(null=True, blank=True, on_delete=models.CASCADE)
+UserModel = CustomUser
 
-#     def __str__(self):
-#         return '{}, {}'.format(self.user,
-#                                self.default_email)
+
+class UserProfile(AbstractTimestampedModel, SoftDeleteModel):
+    user = models.OneToOneField(UserModel, on_delete=models.CASCADE, related_name='profile', db_index=True)
+    bio = models.TextField(blank=True)
+    headline = models.CharField(max_length=255, blank=True)
+    location = models.CharField(max_length=100, blank=True)
+    is_private = models.BooleanField(default=False)

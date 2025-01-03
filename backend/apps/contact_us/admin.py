@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from apps.contact_us.models import ContactDetail
 from utils.admin import BaseAdmin
+from .models import ContactDetail
 
 
 @admin.register(ContactDetail)

@@ -1,0 +1,78 @@
+@use "../styles/base/variables" as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --primary-main-color: #{$primary-main-color};
+    --primary-light-color: #{$primary-light-color};
+    --primary-dark-color: #{$primary-dark-color};
+
+    --text-primary-color: #{$text-primary-color};
+    --text-secondary-color: #{$text-secondary-color};
+
+    --secondary-main-color: #{$secondary-main-color};
+    --secondary-light-color: #{$secondary-light-color};
+    --secondary-dark-color: #{$secondary-dark-color};
+}
+
+.use-text-title {
+    @apply font-bold;
+    font-size: 48px;
+    line-height: 72px;
+    color: var(--text-primary-color);
+}
+
+.use-text-title2 {
+    @apply font-bold;
+    font-size: 36px;
+    line-height: 54px;
+}
+
+.use-text-subtitle2 {
+    @apply font-normal;
+    font-size: 22px;
+    line-height: 32px;
+    //color: var(--text-secondary-color);
+}
+
+.title-main {
+    .title {
+        @apply font-bold;
+        color: var(--text-primary-color);
+        text-transform: capitalize;
+        margin-bottom: 8px;
+        font-size: 42px;
+        display: inline-block;
+        letter-spacing: .0125em;
+        position: relative;
+        z-index: 2;
+
+        &:before {
+            content: '';
+            height: 20px;
+            width: 90%;
+            bottom: 10px;
+            background: var(--secondary-light-color);
+            position: absolute;
+            z-index: -1;
+        }
+    }
+
+    &.text-left {}
+    &.text-center {
+        .title {
+            &:before {
+                left: 10%;
+                background-color: var(--primary-light-color);
+                width: 80%;
+            }
+        }
+    }
+}
+
+body {
+    @apply font-lato font-normal;
+}

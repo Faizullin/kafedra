@@ -1,0 +1,68 @@
+.footer {
+  .logo {
+    p {
+      font-size: 1.25rem;
+      color: rgba(0,0,0,.38);
+      @apply font-bold;
+      line-height: 2rem;
+      letter-spacing: .0125em;
+    }
+  }
+
+  h6, .footer-desc {
+    font-size: 14px;
+  }
+  ul li a, .body-2{
+    color: rgba(0, 0, 0, .54);
+    font-size: 14px;
+  }
+  ul li {
+    margin-bottom: 8px;
+
+    a {
+      font-size: 14px;
+      @apply py-1 font-normal transition-colors  hover:text-text-primary;
+    }
+  }
+
+  .social-icons-list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+
+    .social-icon {
+      @apply w-9 h-9 p-2 rounded-full;
+      cursor: pointer;
+      background: rgba(0, 0, 0, .08);
+
+      svg {
+        @apply fill-primary-dark w-full h-full;
+      }
+    }
+  }
+
+  #footer-lang-switcher {
+    button {
+      border-color: var(--primary-main-color);
+
+      & span, & ~ label {
+        color: var(--primary-dark-color);
+      }
+
+      &:hover, &:focus, &:active {
+        outline: none;
+      }
+    }
+
+    ul {
+      padding: 0;
+      border-radius: 2px;
+
+      li {
+        color: var(--text-primary-color);
+        border-radius: 0;
+      }
+    }
+  }
+}

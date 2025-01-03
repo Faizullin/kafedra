@@ -1,26 +1,33 @@
-import Header from "@/components/common/header/Header";
+"use client"
 
-import "./Home.scss";
+// components
+import Navbar from "@/components/common/header/navbar";
+import Footer from "@/components/common/footer/footer";
 
-export default function Home() {
+// sections
+import CoursesCategories from "./components/courses-categories";
+import OurServices from "./components/our-services";
+import MainFeatures from "./components/main-features";
+import Hero from "./components/hero";
+import SupportedZones from "./components/SupportedZones";
+import About from "./components/about";
+import PopularPosts from "./components/popular-posts";
+
+import "@/styles/home.scss";
+
+
+export default function HomePage() {
     return (
-        <main>
-            <Header/>
-            <section id="home">
-                <div className={"container mx-auto"}>
-                    <div className={"w-1/2"}>
-                        <div className="banner-text">
-                            <div className="title">
-                                <h3 className="use-text-title">Welcome</h3>
-                            </div>
-                            <h5 className="subtitle">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi luctus quam vel magna
-                                placerat, vel aliquet eros laoreet.
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <main className="home-page">
+            <Navbar/>
+            <Hero/>
+            <MainFeatures/>
+            <OurServices/>
+            <About/>
+            <SupportedZones/>
+            <PopularPosts />
+            <CoursesCategories/>
+            <Footer className={"mt-20"}/>
         </main>
     );
 }

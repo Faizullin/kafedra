@@ -11,7 +11,7 @@ from .models import Post, UserModel, PostCategory
 from .serializers import PostListSerializer, PostRetrieveSerializer
 from django.core.files.storage import DefaultStorage
 
-from ..file_system.models import Image
+from ..attachments.models import Image
 
 # from apps.products.models import ProductCategory
 storage = DefaultStorage()

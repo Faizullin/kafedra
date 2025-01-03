@@ -27,3 +27,10 @@ class AbstractActiveModel(models.Model):
 
     class Meta:
         abstract = True
+
+
+class AbstractSlugModel(models.Model):
+    slug = models.CharField(_("Slug"), max_length=80, blank=True, unique=True)
+
+    class Meta:
+        abstract = True
