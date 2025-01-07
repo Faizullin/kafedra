@@ -17,7 +17,7 @@ class StudentGroup:
     name = 'student'
     id = 4
 
+
 class ProfessorGroup:
     name = 'prof'
     id = 5
-

@@ -1,6 +1,6 @@
 from rest_framework import permissions
 
-from .groups import AdminGroup, DeveloperGroup, StaffGroup
+from apps.accounts.groups import AdminGroup, DeveloperGroup, StaffGroup
 
 
 class CBasePermission(permissions.BasePermission):
@@ -18,19 +18,19 @@ class IsStaff(CBasePermission):
 class IsDeveloper(CBasePermission):
     def has_permission(self, request, view):
         groups_ids = self.get_groups_ids(request)
-        return (DeveloperGroup.id in groups_ids)
+        return DeveloperGroup.id in groups_ids
 
 
 class IsAdmin(CBasePermission):
     def has_permission(self, request, view):
         groups_ids = self.get_groups_ids(request)
-        return (AdminGroup.id in groups_ids)
+        return AdminGroup.id in groups_ids
 
 
-class IsAdminOrStaffOrDevloper(CBasePermission):
+class IsAdminOrStaffOrDeveloper(CBasePermission):
     def has_permission(self, request, view):
         groups_ids = self.get_groups_ids(request)
         return (StaffGroup.id in groups_ids) or (DeveloperGroup.id in groups_ids) or (AdminGroup.id in groups_ids)
 
 
-__all__ = ('IsAdmin', 'IsDeveloper', 'IsStaff', 'IsAdminOrStaffOrDevloper')
+__all__ = ('IsAdmin', 'IsDeveloper', 'IsStaff', 'IsAdminOrStaffOrDeveloper')

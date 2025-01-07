@@ -10,7 +10,7 @@ admin.site.__class__ = CustomAdminSite
 urlpatterns = [
     path('dd/admin/', admin.site.urls),
     path('', include('apps.admin_dashboard.urls', namespace='admin_dashboard')),
-    path('', include('apps.accounts.urls', namespace='accounts')),
+    path('', include('apps.accounts.api.urls', namespace='accounts')),
     # path('', include('apps.posts.urls', namespace='posts')),
     # path('', include('apps.products.urls', namespace='products')),
     # path('', include('apps.contact_us.urls', namespace='contact_us')),

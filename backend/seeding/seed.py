@@ -1,14 +1,7 @@
-import json
-import os
-import random
-from datetime import datetime
-
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
-from django.core.files import File
-from django.db.models import QuerySet
 
-from apps.accounts.groups import AdminGroup, DeveloperGroup, StaffGroup
+from apps.accounts import AdminGroup, DeveloperGroup, StaffGroup
 
 User = get_user_model()
 
